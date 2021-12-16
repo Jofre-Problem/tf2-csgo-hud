@@ -1,22 +1,24 @@
-// Charge meter for stickes, donks, huntsman.
-
 "Resource/UI/HudDemomanCharge.res"
 {	
 	"ChargeMeter"
 	{	
-		ControlName				ContinuousProgressBar
-		fieldName				"ChargeMeter"
-		xpos					cs-0.5
-		ypos					c14
-		zpos					2
-		wide					26
-		tall					4
-		visible				1
-
-		font					"Regular 10"
-		textAlignment			center
-
-		fgcolor_override			"ChargeMeterFg"
-		bgcolor_override			"ChargeMeterBg"
-	}
+		"ControlName"	"ContinuousProgressBar"
+		"fieldName"		"ChargeMeter"
+		"font"			"Default"
+		"xpos"					"0"
+		"ypos"					"0"
+		"zpos"					"2"
+		"wide"					"50"
+		"tall"					"7"				
+		"autoResize"			"0"
+		"pinCorner"				"0"
+		"visible"				"1"
+		"alpha"				"180"
+		"enabled"				"1"
+		"border"				"sborder2"
+		"FGcolor_override"		"255 255 255 255"
+		"BGcolor_override"		"0 0 0 200"
+		"dulltext"		"0"
+		"brighttext"	"0"
+	}					
 }

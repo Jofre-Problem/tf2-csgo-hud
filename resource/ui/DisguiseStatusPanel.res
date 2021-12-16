@@ -2,191 +2,127 @@
 {
 	"itemmodelpanel"
 	{
-		"ControlName"				"CEmbeddedItemModelPanel"
-		"fieldName"					"itemmodelpanel"
+		"ControlName"		"CEmbeddedItemModelPanel"
+		"fieldName"		"itemmodelpanel"
 	
-		"xpos"						"0"
-		"ypos"						"0"
-		"zpos"						"1"
-		"wide"						"100"
-		"tall"						"100"
-		"autoResize"				"0"
-		"pinCorner"					"0"
-		"visible"					"1"
-		"enabled"					"1"
-		"useparentbg"				"1"
+		"xpos"			"0"
+		"ypos"			"0"
+		"zpos"			"1"		
+		"wide"			"100"
+		"tall"			"100"
+		"autoResize"		"0"
+		"pinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"useparentbg"		"1"
 
-		"fov"						"54"
-		"start_framed"				"1"
+		"fov"			"54"
+		"start_framed"		"1"
 
-		"disable_manipulation"		"1"
+		"disable_manipulation"	"1"
 
 		"model"
 		{
-			"angles_x"				"10"
-			"angles_y"				"130"
-			"angles_z"				"0"
+			"angles_x"		"10"
+			"angles_y"		"130"
+			"angles_z"		"0"
 		}
 	}
-
-
-	"SpectatorGUIHealth"			// hp container
-	{
-		ControlName					EditablePanel
-		fieldName					"SpectatorGUIHealth"
-		xpos							1
-		ypos							rs1-1
-		wide							35
-		tall							22
-		zpos							10
-		visible						1
-
-		HealthBonusPosAdj			80
-		HealthDeathWarning		0.49
-		TFFont						"HudFontSmall"
-		//HealthDeathWarningColor	"0 0 0 0"
-		TextColor					"HudOffWhite"
-
-		// => resource\ui\SpectatorGuiHealth.res
-	}
-
-	"Background"
-	{
-		ControlName					ImagePanel
-		fieldName					"Background"
-		xpos							1
-		ypos							0
-		wide							110
-		tall							22
-		zpos							-1
-		visible						1
-		fillColor					"TargetBg"
-
-		pin_to_sibling				"SpectatorGUIHealth"
-		pin_corner_to_sibling	PIN_TOPLEFT
-		pin_to_sibling_corner	PIN_TOPRIGHT
-	}
-
 	"DisguiseStatusBG"
 	{
-		"ControlName"				"CTFImagePanel"
-		"fieldName"					"DisguiseStatusBG"
-		"xpos"						"0"
-		"ypos"						"0"
-		"zpos"						"1"
-		"wide"						"3"
-		"tall"	 					"22"
-		"autoResize"				"0"
-		"pinCorner"					"0"
-		"visible"					"1"
-		"enabled"					"1"
-		"image"						"replay/thumbnails/panels/solid_white"
-		"scaleImage"				"1"
-		"teambg_1"					"replay/thumbnails/panels/solid_white"
-		"teambg_2"					"replay/thumbnails/panels/solid_teamred"
-		"teambg_3"					"replay/thumbnails/panels/solid_teamblue"
+		"ControlName"		"CTFImagePanel"
+		"fieldName"		"DisguiseStatusBG"
+		"xpos"			"10"
+		"xpos_minmode"			"10"
+		"ypos"			"30"
+		"ypos_minmode"			"48"
+		"zpos"			"-1"
+		"wide"			"200"
+		"wide_minmode"			"140"
+		"tall"	 		"32"
+		"tall_minmode"	 		"22"
+		"autoResize"		"0"
+		"pinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"image"			"../hud/color_panel_brown"
+		"scaleImage"		"1"
+		"teambg_1"		"../hud/color_panel_brown"
+		"teambg_2"		"../hud/color_panel_red"
+		"teambg_2_lodef"	"../hud/color_panel_red"
+		"teambg_3"		"../hud/color_panel_blu"
+		"teambg_3_lodef"	"../hud/color_panel_blu"
 		
-		"src_corner_height"			"0"
-		"src_corner_width"			"0"
-		
-		"draw_corner_width"			"0"
-		"draw_corner_height" 		"0"
-
-		pin_to_sibling				"Background"
-		pin_corner_to_sibling	PIN_TOPLEFT
-		pin_to_sibling_corner	PIN_TOPRIGHT
+		"src_corner_height"		"23"				// pixels inside the image
+		"src_corner_width"		"23"
+			
+		"draw_corner_width"		"5"				// screen size of the corners ( and sides ), proportional
+		"draw_corner_height" 	"5"	
 	}
 
-	"DisguiseNameLabel"		// player name
+	"DisguiseNameLabel"
 	{	
-		ControlName				Label
-		fieldName				"DisguiseNameLabel"
-		xpos						1
-		ypos						0
-		zpos						10
-		wide						110
-		tall						22
-		visible					1
-
-		labelText				"%disguisename%"
-		font						"Regular 12"
-		textAlignment			north-west
-		textInsetX				5
-
-		fgcolor_override		"White"
-		paintbackground		0
-		
-		pin_to_sibling				"SpectatorGUIHealth"
-		pin_corner_to_sibling	PIN_TOPLEFT
-		pin_to_sibling_corner	PIN_TOPRIGHT
-	}
-
-	"DisguiseNameLabelShadow"		// player name
-	{	
-		ControlName				Label
-		fieldName				"DisguiseNameLabelShadow"
-		xpos						0
-		ypos						0
-		zpos						9
-		wide						110
-		tall						22
-		visible					1
-
-		labelText				"%disguisename%"
-		font						"Regular 12"
-		textAlignment			north-west
-		textInsetX				6
-		textInsetY				1
-
-		fgcolor_override		"Black"
-		paintbackground		0
-		
-		pin_to_sibling			"DisguiseNameLabel"
+		"ControlName"	"Label"
+		"fieldName"		"DisguiseNameLabel"
+		"font"			"HudFontMediumSmallSecondary"
+		"font_minmode"	"TFFontMedium"
+		"xpos"			"52"
+		"xpos_minmode"	"34"
+		"ypos"			"31"
+		"ypos_minmode"	"51"
+		"zpos"			"1"
+		"wide"			"110"
+		"tall"			"24"
+		"autoResize"		"0"
+		"pinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"labelText"		"%disguisename%"
+		"textAlignment"		"North-West"
+		"dulltext"		"0"
+		"brighttext"		"0"
 	}
 	
-
-	"WeaponNameLabel"			// weapon name
-	{
-		ControlName				Label
-		fieldName				"WeaponNameLabel"
-		xpos						0
-		ypos						0
-		zpos						10
-		wide						110
-		tall						22
-		visible					1
-
-		labelText				"%weaponname%"
-		font						"Regular 10"
-		textAlignment			south-west
-		textInsetX				5
-
-		fgcolor_override		"White"
-		paintbackground		0
-		
-		pin_to_sibling			"DisguiseNameLabel"
-	}
-
-	"WeaponNameLabelShadow"		// player name
+	"WeaponNameLabel"
 	{	
-		ControlName				Label
-		fieldName				"WeaponNameLabelShadow"
-		xpos						0
-		ypos						0
-		zpos						9
-		wide						110
-		tall						22
-		visible					1
-
-		labelText				"%weaponname%"
-		font						"Regular 10"
-		textAlignment			south-west
-		textInsetX				6
-		textInsetY				1
-
-		fgcolor_override		"Black"
-		paintbackground		0
-		
-		pin_to_sibling			"WeaponNameLabel"
+		"ControlName"	"Label"
+		"fieldName"		"WeaponNameLabel"
+		"font"			"HUDFontSmall"
+		"font_minmode"	"TFFontMedium"
+		"xpos"			"52"
+		"xpos_minmode"	"34"
+		"ypos"			"45"
+		"ypos_minmode"	"58"
+		"zpos"			"1"
+		"wide"			"110"
+		"tall"			"24"
+		"autoResize"		"0"
+		"pinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"labelText"		"%weaponname%"
+		"textAlignment"		"North-West"
+		"dulltext"		"0"
+		"brighttext"		"0"
 	}
+	
+	"SpectatorGUIHealth"
+	{
+		"ControlName"		"EditablePanel"
+		"fieldName"		"SpectatorGUIHealth"
+		"xpos"			"20"
+		"xpos_minmode"	"10"
+		"ypos"			"30"
+		"ypos_minmode"	"45"
+		"wide"			"32"
+		"tall"			"32"
+		"visible"		"1"
+		"enabled"		"1"	
+		"HealthBonusPosAdj"	"10"
+		"HealthDeathWarning"	"0.49"
+		"TFFont"		"HudFontSmall"
+		"HealthDeathWarningColor"	"HUDDeathWarning"
+		"TextColor"		"HudOffWhite"
+	}	
+	
 }

@@ -2,13 +2,6 @@
 // Opened with open_charinfo (and open_charinfo_backpack etc.)
 
 
-// User's custom background properties
-#base "BackpackBackground.res"
-
-// Base backround properties, overriden by ^
-#base "BackpackBackgroundDefault.res"
-
-// Elements that help with designing
 #base "../DevTools.res"
 
 
@@ -261,7 +254,7 @@
 		wide					42
 		tall					o1
 
-		labelText				"ò"
+		labelText				"M"
 		font					"Symbols 32"
 		textAlignment			center
 
@@ -303,9 +296,8 @@
 		zpos					1040		// buttons above sheet
 		// can't change x, y, wide, tall
 		
-		tabxindent				-43		// tabs x pos
+		tabxindent				-25		// tabs x pos
 		tabxdelta				5		// tab spacing
-		tabwidth				42		// doesn't work
 		tabheight				42		// tab height, pushes other content
 		transition_time 			0
 		yoffset				42		// tab y pos, pushes other content
@@ -316,7 +308,7 @@
 		
 		"tabskv"		// tab (loadout/stats) template
 		{
-			textinsetx				10				// used to control the width
+			textinsetx				0				// used to control the width
 			textinsety				-13
 			selectedcolor			"ButtonHoverFg"
 			unselectedcolor			"ButtonNormalFg"

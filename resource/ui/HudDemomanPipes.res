@@ -1,198 +1,219 @@
 "Resource/UI/HudDemomanPipes.res"
 {
-
-	////////////////////////////////////////////////////////////////////////////////
-	//////////////////////////////// SHIELD CHARGE /////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////
-
+	"background"
+	{
+		"ControlName"	"CTFImagePanel"
+		"fieldName"		"background"
+		"xpos"			"12"
+		"ypos"			"6"
+		"zpos"			"0"
+		"wide"			"0"
+		"wide_minmode"	"0"
+		"tall"			"0"
+		"visible"		"1"
+		"visible_minmode"	"0"
+		"enabled"		"1"
+		"image"			"../hud/misc_ammo_area_blue"
+		"scaleImage"	"1"	
+		"teambg_2"		"../hud/misc_ammo_area_red"
+		"teambg_2_lodef"	"../hud/misc_ammo_area_red_lodef"
+		"teambg_3"		"../hud/misc_ammo_area_blue"
+		"teambg_3_lodef"	"../hud/misc_ammo_area_blue_lodef"				
+	}
+	
+	"ChargeLabel"
+	{
+		"ControlName"			"CExLabel"
+		"fieldName"				"ChargeLabel"
+		"xpos"					"25"
+		"ypos"					"27"
+		"zpos"					"2"
+		"wide"					"0"
+		"tall"					"15"
+		"autoResize"			"1"
+		"pinCorner"				"2"
+		"visible"				"1"
+		"visible_minmode"		"0"
+		"enabled"				"1"
+		"tabPosition"			"0"
+		"labelText"				"#TF_Charge"
+		"textAlignment"			"center"
+		"dulltext"				"0"
+		"brighttext"			"0"
+		"font"					"TFFontSmall"
+	}
 
 	"ChargeMeter"
 	{	
-		ControlName				ContinuousProgressBar
-		fieldName				"ChargeMeter"
-		xpos						cs-0.5
-		ypos						r110
-		zpos						2
-		wide						100
-		tall						6
-		visible					1
-		alpha						150
-
-		fgcolor_override 		"255 255 255 255"			// can't change
-		bgcolor_override		"0 0 0 127"
-	}
-
-	"ChargeLabel"
-	{
-		ControlName				CExLabel
-		fieldName				"ChargeLabel"
-		xpos						0
-		ypos						0
-		zpos						7
-		wide						100
-		tall						6
-		visible					1
-
-		labelText				"Shield" // #TF_Charge
-		font						"Regular 8"
-		textAlignment			center
-		allCaps					1
-
-		fgColor_override 		"255 255 255 255"		// text color
-		paintbackground		0
-
-		pin_to_sibling				"ChargeMeter"
-		pin_corner_to_sibling	PIN_CENTER_TOP
-		pin_to_sibling_corner	PIN_CENTER_TOP
-	}
-
-
-
-	////////////////////////////////////////////////////////////////////////////////
-	//////////////////////////////// STICKIES COUNT ////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////
-
-
-	"StickesAnchor"		// move stickies count
-	{
-		ControlName				EditablePanel
-		fieldName				"StickesAnchor"
-		xpos						cs-0.5
-		ypos						c74
-		wide						20
-		tall						0
-		visible					1
-	}
-	
-
-	"PipesPresentPanel"		// visible when one or more sticky
-	{
-		ControlName				EditablePanel
-		fieldName				"PipesPresentPanel"
-		xpos						0
-		ypos						0
-		zpos						1
-		wide						100
-		tall						50
-		visible					1
-
-		pin_to_sibling				"StickesAnchor"
-		pin_corner_to_sibling	PIN_CENTER_TOP
-		pin_to_sibling_corner	PIN_CENTER_BOTTOM
+		"ControlName"			"ContinuousProgressBar"
+		"fieldName"				"ChargeMeter"
+		"font"					"Default"
+		"xpos"					"0"
+		"ypos"					"28"
+		"zpos"					"2"
+		"wide"					"50"
+		"tall"					"6"				
+		"alpha"					"180"				
+		"autoResize"			"0"
+		"pinCorner"				"0"
+		"visible"				"1"
+		"enabled"				"1"
+		"textAlignment"			"Left"
+		"border"			"sborder2"
 		
-		"PipeIcon"					// visual
-		{
-			visible						0
-		}
-
-		"NumPipesLabel"			// sticky count
-		{
-			ControlName					CExLabel
-			fieldName					"NumPipesLabel"
-			xpos							0
-			ypos							0
-			zpos							3
-			wide							f0
-			tall							f0
-			proportionaltoparent		1
-			visible						1
-			enabled						1
-
-			labelText					"%activepipes%"
-			font							"Bold 22"
-			textAlignment				center
-
-			fgcolor						"HpNormalFg"
-			paintbackground			0
-		}
-
-		"NumPipesLabelDropShadow"		// sticky count shadow
-		{
-			ControlName					CExLabel
-			fieldName					"NumPipesLabelDropShadow"
-			xpos							-1
-			ypos							-1
-			zpos							2
-			wide							f0
-			tall							f0
-			proportionaltoparent		1
-			visible						1
-			enabled						1
-
-			labelText					"%activepipes%"
-			font							"Bold 22"
-			textAlignment				center
-
-			fgcolor						"HpNormalBg"
-			paintbackground			0
-
-			pin_to_sibling				"NumPipesLabel"
-		}
-	}
-
-
-	"NoPipesPresentPanel"		// visible when no stickies
+		"FGcolor_override"		"115 215 215 210"
+		"BGcolor_override"		"22 22 22 140"
+		"dulltext"				"0"
+		"brighttext"			"0"
+	}				
+		
+	"PipesPresentPanel"
 	{
-		ControlName			EditablePanel
-		fieldName			"NoPipesPresentPanel"
-		xpos					0
-		ypos					0
-		zpos					1
-		wide					100
-		tall					50
-		visible				1
-
-		pin_to_sibling				"StickesAnchor"
-		pin_corner_to_sibling	PIN_CENTER_TOP
-		pin_to_sibling_corner	PIN_CENTER_BOTTOM
+		"ControlName"	"EditablePanel"
+		"fieldName"		"PipesPresentPanel"
+		"xpos"			"0"
+		"ypos"			"0"
+		"zpos"			"1"
+		"wide"			"f0"
+		"tall"			"50"
+		"visible"		"1"
 		
 		"PipeIcon"
 		{
-			visible				0
+			"ControlName"	"CTFImagePanel"
+			"fieldName"		"PipeIcon"
+			"xpos"			"1126"
+			"wide"			"0"
+			"tall"			"20"
+			"visible"		"1"
+			"enabled"		"1"
+			"image"			"../hud/ico_stickybomb_red"
+			"scaleImage"	"1"
+			"teambg_2"		"../hud/ico_stickybomb_red"
+			"teambg_3"		"../hud/ico_stickybomb_blue"	
+		}	
+		
+		"NumPipesLabel"
+		{
+			"ControlName"	"CExLabel"
+			"fieldName"		"NumPipesLabel"
+			"xpos"			"0"
+			"ypos"			"18"
+			"zpos"			"2"
+			"wide"			"50"
+			"tall"			"20"
+			"autoResize"	"1"
+			"pinCorner"		"2"
+			"visible"		"1"
+			"enabled"		"1"
+			"tabPosition"	"0"
+			"labelText"		"%activepipes%"
+			"textAlignment"	"center"
+			"dulltext"		"0"
+			"brighttext"	"0"
+			"font"			"robotobold14"
+			"fgcolor_override"	"255 255 255 150"
+			"fgcolor"	"255 255 255 150"
+		}
+		"NumPipesLabelDropshadow"
+		{
+			"ControlName"	"CExLabel"
+			"fieldName"		"NumPipesLabelDropshadow"
+			"xpos"			"9999"
+			"zpos"			"2"
+			"wide"			"35"
+			"tall"			"20"
+			"tall_lodef"	"28"
+			"autoResize"	"1"
+			"pinCorner"		"2"
+			"visible"		"1"
+			"enabled"		"1"
+			"tabPosition"	"0"
+			"labelText"		"%activepipes%"
+			"textAlignment"	"west"
+			"dulltext"		"0"
+			"brighttext"	"0"
+			"font"			"HudFontMedium"
+			"font_minmode"	"HudFontSmall"
+			"font_lodef"	"HudFontMediumBig"
+			"fgcolor"		"black"
+		}		
+	}
+	
+	"NoPipesPresentPanel"
+	{
+		"ControlName"	"EditablePanel"
+		"fieldName"		"NoPipesPresentPanel"
+		"xpos"			"c-25"
+		"ypos"			"0"
+		"zpos"			"1"
+		"wide"			"50"
+		"tall"			"50"
+		"visible"		"1"
+		
+		"PipeIcon"
+		{
+			"ControlName"	"CTFImagePanel"
+			"fieldName"		"PipeIcon"
+			"xpos"			"1126"
+			"ypos"			"16"
+			"ypos_minmode"	"12"
+			"wide"			"20"
+			"wide_minmode"	"14"
+			"tall"			"20"
+			"tall_minmode"	"14"
+			"visible"		"1"
+			"enabled"		"1"
+			"image"			"../hud/ico_stickybomb_red_faded"
+			"scaleImage"	"1"
+			"teambg_2"		"../hud/ico_stickybomb_red_faded"
+			"teambg_3"		"../hud/ico_stickybomb_blue_faded"	
 		}
 
 		"NumPipesLabel"
 		{
-			ControlName					CExLabel
-			fieldName					"NumPipesLabel"
-			xpos							0
-			ypos							0
-			zpos							3
-			wide							f0
-			tall							f0
-			proportionaltoparent		1
-			visible						1
-			enabled						1
-
-			labelText					"%activepipes%"
-			font							"Bold 22"
-			textAlignment				center
-
-			fgcolor						"HpNormalFg"
-			paintbackground			0
+			"ControlName"	"CExLabel"
+			"fieldName"		"NumPipesLabel"
+			"xpos"			"0"
+			"ypos"			"18"
+			"zpos"			"2"
+			"wide"			"50"
+			"tall"			"20"
+			"autoResize"	"1"
+			"pinCorner"		"2"
+			"visible"		"1"
+			"enabled"		"1"
+			"tabPosition"	"0"
+			"labelText"		"%activepipes%"
+			"textAlignment"	"west"
+			"dulltext"		"1"
+			"brighttext"	"0"
+			"font"			"HudFontMedium"
 		}
-
-		"NumPipesLabelDropShadow"
+		"NumPipesLabelDropshadow"
 		{
-			ControlName					CExLabel
-			fieldName					"NumPipesLabelDropShadow"
-			xpos							-1
-			ypos							-1
-			zpos							2
-			wide							f0
-			tall							f0
-			proportionaltoparent		1
-			visible						1
-			enabled						1
-
-			labelText					"%activepipes%"
-			font							"Bold 22"
-			textAlignment				center
-
-			fgcolor						"HpNormalBg"
-			paintbackground			0
-
-			pin_to_sibling				"NumPipesLabel"
-		}
-	}
+			"ControlName"	"CExLabel"
+			"fieldName"		"NumPipesLabelDropshadow"
+			"xpos"			"2251"
+			"ypos"			"19"
+			"ypos_minmode"	"13"
+			"zpos"			"2"
+			"wide"			"35"
+			"tall"			"20"
+			"tall_lodef"	"28"
+			"autoResize"	"1"
+			"pinCorner"		"2"
+			"visible"		"1"
+			"enabled"		"1"
+			"tabPosition"	"0"
+			"labelText"		"%activepipes%"
+			"textAlignment"	"west"
+			"dulltext"		"1"
+			"brighttext"	"0"
+			"font"			"HudFontMedium"
+			"font_minmode"	"HudFontSmall"
+			"font_lodef"	"HudFontMediumBig"
+			"fgcolor"		"black"
+		}			
+	}				
 }

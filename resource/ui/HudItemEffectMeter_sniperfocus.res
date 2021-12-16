@@ -1,12 +1,4 @@
-// Hitmans Hitmaker
-// Same as normal charge meter just a bit higher
-
-#base "HudItemEffectMeter.res"
-
-"Resource/UI/HudItemEffectMeter_SpyKnife.res"
-{
-	"HudItemEffectMeter"
-	{
-		ypos				r117
-	}
-}
+	#base	"../../custom/resource/ui/huditemeffectmeter_sniperfocus.res"
+	#base	"../../_csgo/resource/ui/huditemeffectmeter_sniperfocus.res"
+	#base	"../../_opd/resource/ui/huditemeffectmeter_sniperfocus.res"
+	#base	"../../_def/resource/ui/huditemeffectmeter_sniperfocus.res"

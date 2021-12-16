@@ -1,11 +1,5 @@
 "GameMenu"
 {
-	"BackgroundPanel"		// needs to be here for OnlyAtMenu to work
-	{
-		command 				"engine"
-		OnlyAtMenu				1				// hide when map is loaded
-	}
-
 	"CallVote"
 	{
 		label				"_"
@@ -33,4 +27,18 @@
 		command				"engine disconnect"
 		OnlyInGame			1
 	}
+	"IngameBG"
+	{
+		"label" ""
+		"command"		"engine none"
+		"OnlyInGame" "1"
+		"subimage" "replay/thumbnails/mm/ingameBG"
+	}
+	"IngameBG2"
+	{
+		"label" ""
+		"command"		"engine none"
+		"OnlyInGame" "1"
+		"subimage" "replay/thumbnails/mm/ingameBG"
+	}		
 }

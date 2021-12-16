@@ -46,7 +46,7 @@
 		xpos							0
 		ypos							0
 		zpos							3
-		wide							f0
+		wide							0
 		tall							o0.24
 		proportionaltoparent		1
 		visible						1
@@ -76,7 +76,7 @@
 		xpos							0
 		ypos							0
 		zpos							2
-		wide							f0
+		wide							0
 		tall							o0.24
 		proportionaltoparent		1
 		visible						1

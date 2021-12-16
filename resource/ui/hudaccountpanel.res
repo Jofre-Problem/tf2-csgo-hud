@@ -1,68 +1,132 @@
 "Resource/UI/HudAccountPanel.res"
 {
-	"CHudAccountPanel"			// floating numbers when picking up/spending metal
+	"CHudAccountPanel"
 	{
-		delta_item_x			40
-		delta_item_start_y	80
-		delta_item_end_y		40
-		PositiveColor			"0 255 0 255"
-		NegativeColor			"255 0 0 255"
-		delta_lifetime			1.5
-		delta_item_font		"Thin 18"
+		"delta_item_x"			"28"
+		"delta_item_start_y"	"90"
+		"delta_item_end_y"		"70"
+		"PositiveColor"			"0 255 0 255"
+		"NegativeColor"			"255 0 0 255"
+		"delta_lifetime"		"1.5"
+		"delta_item_font"		"HudFontMedium"
+	}
+	
+	"AccountBG"
+	{
+		"ControlName"	"CTFImagePanel"
+		"fieldName"		"AccountBG"
+		"xpos"			"5"
+		"ypos"			"103"
+		"zpos"			"0"
+		"wide"			"84"
+		"tall"			"42"
+		"visible"		"1"
+		"enabled"		"1"
+		"image"			"../hud/misc_ammo_area_blue"
+		"scaleImage"	"1"	
+		"teambg_2"		"../hud/misc_ammo_area_red"
+		"teambg_2_lodef"	"../hud/misc_ammo_area_red_lodef"
+		"teambg_3"		"../hud/misc_ammo_area_blue"
+		"teambg_3_lodef"	"../hud/misc_ammo_area_blue_lodef"
 	}
 	
 	"MetalIcon"	
 	{
-		ControlName			CIconPanel
-		fieldName			"MetalIcon"
-		xpos					19
-		ypos					116
-		zpos					1
-		wide					10
-		tall					10
-		visible				0
-		scaleImage			1	
-		icon					"ico_metal"
-		iconColor			"ProgressOffWhite"
+		"ControlName"	"CIconPanel"
+		"fieldName"		"MetalIcon"
+		"xpos"			"2219"
+		"xpos_lodef"	"12"
+		"ypos"			"116"
+		"ypos_lodef"	"112"
+		"zpos"			"1"
+		"wide"			"10"
+		"wide_lodef"	"15"
+		"tall"			"10"
+		"tall_lodef"	"15"
+		"visible"		"1"
+		"enabled"		"1"
+		"scaleImage"	"1"	
+		"icon"			"ico_metal"
+		"iconColor"		"ProgressOffWhite"
 	}
-	
-	"AccountValue"			// engi metal count
-	{		
-		ControlName					CExLabel
-		fieldName					"AccountValue"
-		xpos							0
-		ypos							0
-		zpos							2
-		wide							f0
-		tall							f0
-		proportionaltoparent		1
-		visible						1
-
-		labelText					"%metal%"
-		font							"Bold 20"
-		textAlignment				center
-		fgColor						"AmmoNormalFg"
-		paintbackground			0
+	"BG"
+	{
+		"ControlName"	"ctfImagePanel"
+		"fieldName"		"BG"
+		"xpos"			"-1"
+		"ypos"			"r47"
+		"zpos"			"4"
+		"wide"			"100"
+		"tall"			"17"
+		"visible"		"1"
+		"alpha"			"185"
+		"image"					"replay/thumbnails/sidegradient2"
+		"enabled"		"1"
+		"scaleImage"	"1"	
 	}
-
-	"AccountValueShadow"
-	{		
-		ControlName					CExLabel
-		fieldName					"AccountValueShadow"
-		xpos							0
-		ypos							0
-		zpos							2
-		wide							f-1
-		tall							f-1
-		proportionaltoparent		1
-		visible						1
-
-		labelText					"%metal%"
-		font							"Bold 20"
-		textAlignment				center
-		fgColor						"AmmoNormalBg"
-		paintbackground			0
-
-		pin_to_sibling				"AccountValue"
+	"BG3"
+	{
+		"ControlName"	"ctfImagePanel"
+		"fieldName"		"BG3"
+		"xpos"			"-1"
+		"ypos"			"r47"
+		"zpos"			"4"
+		"wide"			"100"
+		"tall"			"17"
+		"visible"		"1"
+		"alpha"			"205"
+		"image"					"replay/thumbnails/sidegradient2"
+		"enabled"		"1"
+		"scaleImage"	"1"	
+	}
+	"BG2"
+	{
+		"ControlName"	"ctfImagePanel"
+		"fieldName"		"BG2"
+		"xpos"			"-1"
+		"ypos"			"r47"
+		"zpos"			"4"
+		"wide"			"100"
+		"tall"			"1"
+		"visible"		"1"
+		"alpha"			"205"
+		"image"					"replay/thumbnails/sidegradient2"
+		"enabled"		"1"
+		"scaleImage"	"1"	
+	}
+	"BG4"
+	{
+		"ControlName"	"ctfImagePanel"
+		"fieldName"		"BG4"
+		"xpos"			"-1"
+		"ypos"			"r31"
+		"zpos"			"4"
+		"wide"			"100"
+		"tall"			"1"
+		"visible"		"1"
+		"alpha"			"205"
+		"image"					"replay/thumbnails/sidegradient2"
+		"enabled"		"1"
+		"scaleImage"	"1"	
+	}
+	"AccountValue"
+	{
+		"ControlName"	"CExLabel"
+		"fieldName"		"AccountValue"
+		"xpos"			"0"
+		"ypos"			"0"
+		"zpos"			"2"
+		"wide"			"200"
+		"tall"			"26"
+		"autoResize"	"1"
+		"pinCorner"		"2"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"	"0"
+		"labelText"		"%metal%"
+		"textAlignment"	"center"
+		"dulltext"		"0"
+		"brighttext"	"0"
+		"font"			"robotobold14"
 	}
 }

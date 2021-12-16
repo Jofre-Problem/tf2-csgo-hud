@@ -1,144 +1,292 @@
 "Resource/UI/HudMedicCharge.res"
-{
-	////////////////////////////////////////////////////////////////////////////////
-	/////////////////////////////////// MEDIGUNS ///////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////
-
-	"ChargeLabel"			// charge % text; hidden with vaccinator
+{	
+	"Background"
 	{
-		ControlName				CExLabel
-		fieldName				"ChargeLabel"
-		xpos						cs-0.5+165
-		ypos						r150
-		zpos						2
-		wide						150
-		tall						40
-		visible					1
-
-		labelText				"#TF_UberchargeMinHUD"		// #TF_Ubercharge (UBERCHARGE: 10%) or #TF_UberchargeMinHUD (10%)
-		textAlignment			center
-		font						"Bold 57 Shadow 1"
-		fgcolor					"AmmoNormalFg"
-		paintbackground		0
+		"ControlName"	"CTFImagePanel"
+		"fieldName"		"Background"
+		"xpos"			"0"
+		"ypos"			"0"
+		"zpos"			"0"
+		"wide"			"0"
+		"tall"			"65"
+		"visible"		"1"
+		"enabled"		"1"
+		"image"			"../hud/medic_charge_blue_bg"
+		"scaleImage"	"1"	
+		"teambg_2"		"../hud/medic_charge_red_bg"
+		"teambg_3"		"../hud/medic_charge_blue_bg"				
 	}
-
+	"BG"
+	{
+		"ControlName"	"ctfImagePanel"
+		"fieldName"		"BG"
+		"xpos"			"-1"
+		"ypos"			"r27"
+		"zpos"			"4"
+		"wide"			"100"
+		"tall"			"34"
+		"visible"		"1"
+		"alpha"			"185"
+		"image"					"replay/thumbnails/sidegradient2"
+		"enabled"		"1"
+		"scaleImage"	"1"	
+	}
+	"BG3"
+	{
+		"ControlName"	"ctfImagePanel"
+		"fieldName"		"BG3"
+		"xpos"			"-1"
+		"ypos"			"r27"
+		"zpos"			"4"
+		"wide"			"100"
+		"tall"			"34"
+		"visible"		"1"
+		"alpha"			"205"
+		"image"					"replay/thumbnails/sidegradient2"
+		"enabled"		"1"
+		"scaleImage"	"1"	
+	}
+	"BG2"
+	{
+		"ControlName"	"ctfImagePanel"
+		"fieldName"		"BG2"
+		"xpos"			"-1"
+		"ypos"			"r27"
+		"zpos"			"4"
+		"wide"			"100"
+		"tall"			"1"
+		"visible"		"1"
+		"alpha"			"205"
+		"image"					"replay/thumbnails/sidegradient2"
+		"enabled"		"1"
+		"scaleImage"	"1"	
+	}
+	"ChargeLabel"
+	{
+		"ControlName"	"CExLabel"
+		"fieldName"		"ChargeLabel"
+		"xpos"			"0"
+		"ypos"			"r28"	[$WIN32]
+		"zpos"			"5"
+		"wide"			"85"
+		"tall"			"31"
+		"visible"		"1"
+		"enabled"		"1"
+		"font"			"RobotoBold30"
+		"fgcolor"		"250 250 250 210"	
+		"textalignment"		"east"	
+		"labelText"		"#TF_UberchargeMinHUD"
+	}
+	"ChargeLabel2"
+	{
+		"ControlName"	"CExLabel"
+		"fieldName"		"ChargeLabel2"
+		"xpos"			"0"
+		"ypos"			"r28"	[$WIN32]
+		"zpos"			"4"
+		"wide"			"85"
+		"tall"			"31"
+		"visible"		"1"
+		"enabled"		"1"
+		"font"			"RobotoBold30test"
+		"fgcolor"		"250 250 250 210"	
+		"textalignment"		"east"
+		"labelText"		"#TF_UberchargeMinHUD"
+	}
+	"UberBG"
+	{
+		"ControlName"	"ImagePanel"
+		"fieldName"		"UberBG"
+		"xpos"			"c103"
+		"ypos"			"r127"
+		"zpos"			"2"
+		"wide"			"104"
+		"tall"			"34"
+		"autoResize"	"0"
+		"pinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"	"0"
+		"alpha"			"0"		
+		"fillcolor"		"178 230 118 160"
+		"PaintBackgroundType"	"0"
+	}
+	
+	"IndividualChargesLabel"
+	{
+		"ControlName"	"CExLabel"
+		"fieldName"		"IndividualChargesLabel"
+		"xpos"			"20"
+		"ypos"			"r12"
+		"zpos"			"6"
+		"wide"			"90"
+		"tall"			"15"
+		"autoResize"	"1"
+		"pinCorner"		"2"
+		"visible"		"1"
+		"enabled"		"1"
+		"tabPosition"	"0"
+		"labelText"		"#TF_IndividualUbercharges"
+		"textAlignment"	"west"
+		"dulltext"		"0"
+		"brighttext"	"0"
+		"font"			"HudFontSmallest"
+	}
+	
 	"ChargeMeter"
 	{	
-		ControlName				ContinuousProgressBar
-		fieldName				"ChargeMeter"
-		xpos						cs-0.5
-		ypos						r110
-		wide						100
-		tall						6
-		visible					1
-
-		fgColor_override		"ChargeMeterFg"
-		bgColor_override		"ChargeMeterBg"
-	}
-
-
-	////////////////////////////////////////////////////////////////////////////////
-	////////////////////////////////// VACCINATOR //////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////
-
-	"IndividualChargesLabel"		// vaccinaor charges count
-	{
-		ControlName				CExLabel
-		fieldName				"IndividualChargesLabel"
-		xpos						cs-0.5
-		ypos						r110
-		zpos						2
-		wide						100
-		tall						40
-		visible					1
-
-		labelText				"#TF_IndividualUberchargesMinHUD" // #TF_IndividualUbercharges #TF_IndividualUberchargesMinHUD
-		textAlignment			center
-		font						"Bold 22"
-		fgcolor					"AmmoNormalFg"
-		paintbackground		0
-	}
+		"ControlName"	"CircularProgressBar"
+		"fieldName"		"ChargeMeter"
+		"font"			"Default"
+		"xpos"			"c-90"
+		"ypos"			"r114"
+		"zpos"			"2"
+		"wide"			"180"
+		"tall"			"10"				
+		"autoResize"	"0"
+		"pinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"textAlignment"	"Left"
+		"meterbgcolor_override"	"22 22 22 140"
+		"bgcolor_override"	"22 22 22 140"
+		"fgcolor_override"	"whitetone"
+		"dulltext"		"0"
+		"brighttext"	"0"
+	}		
 
 	"ChargeMeter1"
 	{	
-		ControlName				ContinuousProgressBar
-		fieldName				"ChargeMeter1"
-		xpos						c-50
-		ypos						r110
-		wide						24
-		tall						6
-		visible					1
-
-		fgColor_override		"ChargeMeterFg"
-		bgColor_override		"ChargeMeterBg"
+		"ControlName"	"ContinuousProgressBar"
+		"fieldName"		"ChargeMeter1"
+		"font"			"Default"
+		"xpos"			"10"
+		"ypos"			"r20"
+		"zpos"			"6"
+		"wide"			"19"
+		"tall"			"8"				
+		"autoResize"	"0"
+		"pinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"textAlignment"	"Left"
+		"dulltext"		"0"
+		"brighttext"	"0"
+		
+		"meterbgcolor_override"	"22 22 22 140"
+		"bgcolor_override"	"22 22 22 140"
+		"fgcolor_override"	"whitetone"
 	}
 
 	"ChargeMeter2"
 	{	
-		ControlName				ContinuousProgressBar
-		fieldName				"ChargeMeter2"
-		xpos						c-25
-		ypos						r110
-		wide						24
-		tall						6
-		visible					1
-
-		fgColor_override		"ChargeMeterFg"
-		bgColor_override		"ChargeMeterBg"
+		"ControlName"	"ContinuousProgressBar"
+		"fieldName"		"ChargeMeter2"
+		"font"			"Default"
+		"xpos"			"32"
+		"ypos"			"r20"
+		"zpos"			"6"
+		"wide"			"19"
+		"tall"			"8"				
+		"autoResize"	"0"
+		"pinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"textAlignment"	"Left"
+		"dulltext"		"0"
+		"brighttext"	"0"
+		
+		"meterbgcolor_override"	"22 22 22 140"
+		"bgcolor_override"	"22 22 22 140"
+		"fgcolor_override"	"whitetone"
 	}
 
 	"ChargeMeter3"
 	{	
-		ControlName				ContinuousProgressBar
-		fieldName				"ChargeMeter3"
-		xpos						c0
-		ypos						r110
-		wide						24
-		tall						6
-		visible					1
-
-		fgColor_override		"ChargeMeterFg"
-		bgColor_override		"ChargeMeterBg"
+		"ControlName"	"ContinuousProgressBar"
+		"fieldName"		"ChargeMeter3"
+		"font"			"Default"
+		"xpos"			"54"
+		"ypos"			"r20"
+		"zpos"			"6"
+		"wide"			"19"
+		"tall"			"8"				
+		"autoResize"	"0"
+		"pinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"textAlignment"	"Left"
+		"dulltext"		"0"
+		"brighttext"	"0"
+		
+		"meterbgcolor_override"	"22 22 22 140"
+		"bgcolor_override"	"22 22 22 140"
+		"fgcolor_override"	"whitetone"
 	}
 
 	"ChargeMeter4"
 	{	
-		ControlName				ContinuousProgressBar
-		fieldName				"ChargeMeter4"
-		xpos						c25
-		ypos						r110
-		wide						24
-		tall						6
-		visible					1
-
-		fgColor_override		"ChargeMeterFg"
-		bgColor_override		"ChargeMeterBg"
+		"ControlName"	"ContinuousProgressBar"
+		"fieldName"		"ChargeMeter4"
+		"font"			"Default"
+		"xpos"			"76"
+		"ypos"			"r20"
+		"zpos"			"6"
+		"wide"			"19"
+		"tall"			"8"				
+		"autoResize"	"0"
+		"pinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"textAlignment"	"Left"
+		"dulltext"		"0"
+		"brighttext"	"0"
+		
+		"meterbgcolor_override"	"22 22 22 140"
+		"bgcolor_override"	"22 22 22 140"
+		"fgcolor_override"	"whitetone"
 	}
-
-	"ResistIconAnchor"		// force position
+	
+	"HealthClusterIcon"
 	{
-		ControlName				EditablePanel
-		fieldName				"ResistIconAnchor"
-		xpos						c120
-		ypos						r130-27
-		wide						20
-		tall						0
-		visible					1
+		"ControlName"	"ImagePanel"
+		"fieldName"		"HealthClusterIcon"
+		"xpos"			"2"
+		"ypos"			"17"
+		"wide"			"36"
+		"tall"			"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"image"			"../hud/ico_health_cluster"
+		"scaleImage"	"1"	
+	}	
+	
+	"ResistIconAnchor"
+	{
+		"ControlName"								"EditablePanel"
+		"fieldName"									"ResistIconAnchor"
+		"xpos"										"65"
+		"ypos"										"r50"
+		"wide"										"30"
+		"tall"										"30"
+		"visible"									"1"
+		"enabled"									"1"
 	}
 	
 	"ResistIcon"
 	{
-		ControlName				ImagePanel
-		fieldName				"ResistIcon"
-		xpos						0					// position hardcoded
-		ypos						0
-		zpos						10
-		wide						60
-		tall						50
-		visible					1
-		image						"../effects/defense_buff_bullet_blue"
-		scaleImage				1
-		pin_to_sibling			"ResistIconAnchor"
+		"ControlName"								"ImagePanel"
+		"fieldName"									"ResistIcon"
+		"xpos"										"0"
+		"ypos"										"0"
+		"wide"										"18"
+		"tall"										"18"
+		"visible"									"1"
+		"enabled"									"1"
+		"image"										"../HUD/defense_buff_bullet_blue"
+		"scaleImage"								"1"
+		"pin_to_sibling"							"ResistIconAnchor"
+		"pin_corner_to_sibling"						"1"
+		"pin_to_sibling_corner"						"1"
 	}
-	
 }

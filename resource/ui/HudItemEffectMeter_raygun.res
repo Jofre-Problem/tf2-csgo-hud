@@ -1,4 +1,4 @@
-// Bison charge meter
-// Same as normal charge meter (you can't have banner at the same time)
-
-#base "HudItemEffectMeter.res"
+	#base	"../../custom/resource/ui/huditemeffectmeter_raygun.res"
+	#base	"../../_csgo/resource/ui/huditemeffectmeter_raygun.res"
+	#base	"../../_opd/resource/ui/huditemeffectmeter_raygun.res"
+	#base	"../../_def/resource/ui/huditemeffectmeter_raygun.res"

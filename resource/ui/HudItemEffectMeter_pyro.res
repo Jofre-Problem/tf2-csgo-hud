@@ -1,12 +1,5 @@
-// Phlog mmmph charge meter
-// Same as normal charge meter just a bit higher, to not overlap with gas passer
-
-#base "HudItemEffectMeter.res"
-
-"Resource/UI/HudItemEffectMeter_SpyKnife.res"
-{
-	"HudItemEffectMeter"
-	{
-		ypos				r117
-	}
-}
+// same as huditemeffectmeter.res
+#base "../../_csgo/resource/ui/huditemeffectmeter_pyro.res"
+#base "../../_opd/resource/ui/huditemeffectmeter_pyro.res"
+#base "../../_def/resource/ui/huditemeffectmeter_pyro.res"
+#base "../../_def/resource/ui/huditemeffectmeter.res"

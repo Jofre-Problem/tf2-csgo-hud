@@ -4,11 +4,11 @@
 	{
 		"ControlName"	"ImagePanel"
 		"fieldName"		"PlayerStatusHealthImage"
-		"xpos"			"9999"
-		"ypos"			"6"
+		"xpos"			"7"
+		"ypos"			"7"
 		"zpos"			"4"
-		"wide"			"20"
-		"tall"			"20"
+		"wide"			"0"
+		"tall"			"0"
 		"visible"		"1"
 		"enabled"		"1"
 		"scaleImage"	"1"	
@@ -17,11 +17,14 @@
 	{
 		"ControlName"	"ImagePanel"
 		"fieldName"		"PlayerStatusHealthImageBG"
-		"xpos"			"9999"
-		"ypos"			"4"
+		"xpos"			"225"
+		"ypos"			"5"
+		"ypos_minmode"	"6"
 		"zpos"			"3"
-		"wide"			"24"
-		"tall"			"24"
+		"wide"			"22"
+		"wide_minmode"	"16"
+		"tall"			"22"
+		"tall_minmode"	"16"
 		"visible"		"1"
 		"enabled"		"1"
 		"image"			"../hud/health_bg"
@@ -31,111 +34,76 @@
 	{
 		"ControlName"	"ImagePanel"
 		"fieldName"		"BuildingStatusHealthImageBG"
-		"xpos"			"9999"
+		"xpos"			"2220"
 		"ypos"			"2"
+		"ypos_minmode"	"3"
 		"zpos"			"2"
 		"wide"			"28"
+		"wide_minmode"	"22"
 		"tall"			"28"
+		"tall_minmode"	"22"
 		"visible"		"0"
 		"enabled"		"1"
 		"image"			"../hud/health_equip_bg"
 		"scaleImage"	"1"	
-	}
-
-	"PlayerStatusHealthBonusImage"		// growing overheal image
+	}	
+	"PlayerStatusHealthBonusImage"
 	{
-		ControlName					ImagePanel
-		fieldName					"PlayerStatusHealthBonusImage"
-		xpos							rs1.5-2
-		ypos							cs-0.5
-		zpos							2
-		wide							p2
-		tall							o1
-		proportionaltoparent		1
-		visible						0
-		image							"replay/thumbnails/panels/solid_overheal"
-		scaleImage					1
-		alpha							170
+		"ControlName"	"ImagePanel"
+		"fieldName"		"PlayerStatusHealthBonusImage"
+		"xpos"			"5222"
+		"ypos"			"5"
+		"ypos_minmode"	"8"
+		"zpos"			"3"
+		"wide"			"22"
+		"wide_minmode"	"12"
+		"tall"			"22"
+		"tall_minmode"	"12"
+		"visible"		"0"
+		"enabled"		"1"
+		"image"			"../hud/health_over_bg"
+		"scaleImage"	"1"	
 	}
-
-	"HpAnchor"
+	"PlayerStatusHealthValue"
 	{
-		ControlName				EditablePanel
-		fieldName				"HpAnchor"
-		xpos						0
-		ypos						0
-		wide						10
-		tall						0
-		visible					1
+		"ControlName"	"Label"
+		"fieldName"		"PlayerStatusHealthValue"
+		"xpos"			"0"
+		"ypos"			"0"
+		"zpos"			"5"
+		"wide"			"36"
+		"tall"			"18"
+		"visible"		"1"
+		"enabled"		"1"
+		"font"		"robotobold22"
+		"labelText"		"%Health%"
+		"fgcolor_override"		"darktone2"
+		"textAlignment"	"center"	
 	}
-
-	"PlayerStatusHealthValue"		// HP number
+	"PlayerStatusHealthValueScan"
 	{
-		ControlName					CExLabel
-		fieldName					"PlayerStatusHealthValue"
-		xpos							0
-		ypos							0
-		zpos							5
-		wide							f0
-		tall							f0
-		proportionaltoparent		1
-		visible						1
-
-		labelText					"%Health%"
-		textAlignment				center	
-		font							"Regular 18"
-
-		fgcolor						"HpNormalFg"
-		paintbackground			0
-
-		pin_to_sibling				"HpAnchor"
+		"ControlName"	"Label"
+		"fieldName"		"PlayerStatusHealthValueScan"
+		"xpos"			"0"
+		"ypos"			"0"
+		"zpos"			"5"
+		"wide"			"36"
+		"tall"			"18"
+		"visible"		"1"
+		"enabled"		"1"
+		"font"		"robotobold22Test"
+		"labelText"		"%Health%"
+		"fgcolor_override"		"0 0 0 240"
+		"textAlignment"	"center"	
 	}
-
-	"PlayerStatusHealthValueShadow"		// HP number
-	{
-		ControlName					CExLabel
-		fieldName					"PlayerStatusHealthValueShadow"
-		xpos							0
-		ypos							0
-		zpos							5
-		wide							f-1
-		tall							f-2
-		proportionaltoparent		1
-		visible						1
-
-		labelText					"%Health%"
-		textAlignment				center	
-		font							"Regular 18"
-
-		fgcolor						"HpNormalBg"
-		paintbackground			0
-
-		pin_to_sibling				"PlayerStatusHealthValue"
-	}
-
-	"TargetHealthBg"
-	{
-		ControlName					EditablePanel
-		fieldName					"TargetHealthBg"
-		xpos							0
-		ypos							cs-0.5
-		zpos							1
-		wide							44
-		tall							f0
-		proportionaltoparent		1
-		visible						1
-
-		bgcolor_override			"TargetBg"
-		paintbackground			1
-	}
-
 	"PlayerStatusPlayerLevel"
 	{
 		"ControlName"	"CExLabel"
 		"fieldName"		"PlayerStatusPlayerLevel"
 		"xpos"			"8"
 		"xpos_minmode"	"0"
-		"ypos"			"9"
+		"ypos"			"9"	[$WIN32]
+		"ypos"			"0"	[$X360]
 		"zpos"			"5"
 		"wide"			"16"
 		"tall"			"12"
@@ -144,5 +112,6 @@
 		"textAlignment"	"center"	
 		"font"			"ScoreboardVerySmall"
 		"fgcolor"		"TFOrange"
-	}							
+	}
+	
 }

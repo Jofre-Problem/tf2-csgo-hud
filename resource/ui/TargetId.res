@@ -1,4 +1,4 @@
-"Resource/UI/TargetID.res"
+	"Resource/UI/TargetID.res"
 {
 	"TargetIDBG"
 	{
@@ -12,7 +12,7 @@
 		"autoResize"		"0"
 		"pinCorner"		"0"
 		"visible"		"0"
-		"enabled"		"1"
+		"enabled"		"0"
 		"image"			"../hud/color_panel_brown"
 		"scaleImage"		"1"
 		"teambg_1"		"../hud/color_panel_brown"
@@ -27,131 +27,168 @@
 		"draw_corner_width"		"5"				// screen size of the corners ( and sides ), proportional
 		"draw_corner_height" 	"5"	
 	}
-
-
-	"SpectatorGUIHealth"			// target's HP container
+	"TargetIDBG_Spec_Blue"
 	{
-		ControlName					EditablePanel
-		fieldName					"SpectatorGUIHealth"
-		xpos							0
-		ypos							cs-0.5
-		wide							35
-		tall							17
-		proportionaltoparent		1
-		visible						0
-
-		HealthBonusPosAdj				90				// PlayerStatusHealthBonusImage grow
-		HealthDeathWarning			0.49
-		TFFont							"HudFontSmall"
-		HealthDeathWarningColor		"HUDDeathWarning"
-		TextColor						"HudOffWhite"
-
-		// => resource\ui\SpectatorGuiHealth.res
+		"ControlName"		"ScalableImagePanel"
+		"fieldName"		"TargetIDBG_Spec_Blue"
+		"xpos"			"9999"
+		"ypos"			"9999"
+		"zpos"			"-1"
+		"wide"			"252"
+		"tall"	 		"30"
+		"autoResize"		"0"
+		"pinCorner"		"0"
+		"visible"		"0"
+		"enabled"		"0"
+		"image"			"../hud/color_panel_blu"
+		"image_lodef"	"../hud/color_panel_blu"
+		
+		"src_corner_height"		"23"				// pixels inside the image
+		"src_corner_width"		"23"
+			
+		"draw_corner_width"		"5"				// screen size of the corners ( and sides ), proportional
+		"draw_corner_height" 	"5"
+	}
+	"TargetIDBG_Spec_Red"
+	{
+		"ControlName"		"ScalableImagePanel"
+		"fieldName"		"TargetIDBG_Spec_Red"
+		"xpos"			"9999"
+		"ypos"			"9999"
+		"zpos"			"-1"
+		"wide"			"252"
+		"tall"	 		"30"
+		"autoResize"		"0"
+		"pinCorner"		"0"
+		"visible"		"0"
+		"enabled"		"0"
+		"image"			"../hud/color_panel_red"
+		"image_lodef"	"../hud/color_panel_red"
+		
+		"src_corner_height"		"23"				// pixels inside the image
+		"src_corner_width"		"23"
+			
+		"draw_corner_width"		"5"				// screen size of the corners ( and sides ), proportional
+		"draw_corner_height" 	"5"
+	}
+	
+	"TargetBG"
+	{
+		"ControlName"	"ImagePanel"
+		"fieldName"		"TargetBG"
+		"xpos"		"0"
+		"ypos"		"0"
+		"zpos"		"-10"
+		"wide"		"640"
+		"tall"		"18"
+		"autoResize"	"0"
+		"pinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"fillcolor"		"0 0 0 198"
+		"PaintBackgroundType""0"
+	}
+	"TargetBG2"
+	{
+		"ControlName"	"ImagePanel"
+		"fieldName"		"TargetBG2"
+		"xpos"		"0"
+		"ypos"		"18"
+		"zpos"		"-10"
+		"wide"		"640"
+		"tall"		"12"
+		"autoResize"	"0"
+		"pinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"fillcolor"		"61 61 61 0"
+		"PaintBackgroundType""0"
+	}
+	
+	"TargetNameLabel"
+	{	
+		"ControlName"		"Label"
+		"fieldName"		"TargetNameLabel"
+		"font"			"Robotobold16"
+		"xpos"			"8"
+		"ypos"			"0"
+		"zpos"			"1"
+		"wide"			"640"
+		"tall"			"18"
+		"autoResize"		"0"
+		"pinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"labelText"		"%targetname%"
+		"fgcolor_override"		"255 255 255 210"
+		"textAlignment"		"west"
+		"dulltext"		"0"
+		"brighttext"		"0"
 	}	
 	
+	"TargetDataLabel"
+	{	
+		"ControlName"		"Label"
+		"fieldName"		"TargetDataLabel"
+		"font"			"default"
+		"xpos"			"8"
+		"ypos"			"18"	[$WIN32]
+		"ypos"			"22"	[$X360]
+		"zpos"			"1"
+		"wide"			"280"
+		"tall"			"12"
+		"autoResize"		"0"
+		"pinCorner"		"0"
+		"visible"		"1"
+		"enabled"		"1"
+		"fgcolor_override"		"178 230 118 225"
+		"labelText"		"%targetdata%"
+		"textAlignment"		"Left"
+		"dulltext"		"0"
+		"brighttext"		"0"
+	}
+	"SpectatorGUIHealth"
+	{
+		"ControlName"		"EditablePanel"
+		"fieldName"		"SpectatorGUIHealth"
+		"xpos"			"0"
+		"ypos"			"0"
+		"wide"			"36"
+		"tall"			"32"
+		"visible"		"0"
+		"enabled"		"0"	
+		"HealthBonusPosAdj"	"10"
+		"HealthDeathWarning"	"0.49"
+		"TFFont"		"HudFontSmall"
+		"HealthDeathWarningColor"	"HUDDeathWarning"
+		"TextColor"		"HudOffWhite"
+	}	
 	
-	"TargeTNameAnchor"			// override positions
-	{
-		ControlName				EditablePanel
-		fieldName				"TargetNameAnchor"
-		xpos						81
-		ypos						20
-		wide						0
-		tall						10
-		visible					1
-	}
-
-	"TargetNameLabel"			// target's name
-	{	
-		ControlName					Label
-		fieldName					"TargetNameLabel"
-		xpos							40			// can't change
-		ypos							cs-0.5
-		zpos							5
-		wide							640
-		tall							15
-		proportionaltoparent		1
-		visible						1
-		enabled						0			// locked fgColor workaround
-
-		labelText					"%targetname%"
-		font							"Regular 10"
-		textAlignment				west
-		textInsetX					10
-
-		disabledFgColor2_override		"255 255 255 255"
-		paintbackground					1
-		bgColor_override					"TargetBg"
-
-		pin_to_sibling				"TargetNameAnchor"
-	}
-
-
-	"TargetDataAnchor"			// override positions
-	{
-		ControlName				EditablePanel
-		fieldName				"TargetDataAnchor"
-		xpos						81
-		ypos						0
-		wide						0
-		tall						10
-		visible					1
-	}
-
-	"TargetDataLabel"		// target's ammo in clip or uber %
-	{	
-		ControlName				Label
-		fieldName				"TargetDataLabel"
-		xpos						0							// can't change
-		ypos						0
-		zpos						1
-		wide						640
-		tall						9
-		proportionaltoparent	1
-		visible					1
-		enabled					0
-
-		labelText				"%targetdata%"
-		font						"Regular 11"
-		textAlignment			west
-		textInsetX				10
-
-		disabledFgColor2_override		"255 255 255 255"
-		paintbackground					0
-		bgColor_override					"TargetBg"
-
-		pin_to_sibling				"TargetDataAnchor"
-	}
-
 	"AmmoIcon"
 	{
-		ControlName				ImagePanel
-		fieldName				"AmmoIcon"
-		xpos						-3
-		ypos						0
-		zpos						12
-		wide						9
-		tall						9
-		visible					0
-		image						"../hud/leaderboard_class_heavy"
-		scaleImage				1
-
-		pin_to_sibling				"TargetDataLabel"
-		pin_corner_to_sibling	PIN_CENTER_LEFT
-		pin_to_sibling_corner	PIN_CENTER_LEFT
+		"ControlName"	"ImagePanel"
+		"fieldName"		"AmmoIcon"
+		"xpos"			"40"
+		"xpos_minmode"	"30"
+		"ypos"			"20"
+		"ypos_minmode"	"19"
+		"zpos"			"12"
+		"wide"			"0"
+		"tall"			"8"
+		"visible"		"0"
+		"enabled"		"1"
+		"image"			"../hud/leaderboard_class_heavy"
+		"scaleImage"	"1"
 	}
-	
 	
 	"KillStreakIcon"
 	{
 		"ControlName"	"ImagePanel"
 		"fieldName"		"KillStreakIcon"
-		"xpos"			"10"
-		"xpos_minmode"	"30"
-		"ypos"			"20"
-		"ypos_minmode"	"16"
+		"xpos"			"2"
+		"ypos"			"14"
 		"zpos"			"12"
-		"wide"			"8"
+		"wide"			"0"
 		"tall"			"8"
 		"visible"		"0"
 		"enabled"		"1"
@@ -159,18 +196,17 @@
 		"scaleImage"	"1"
 	}
 	
-	"MoveableSubPanel"		// engi press X to pick up building
+	"MoveableSubPanel"
 	{
 		"ControlName"		"EditablePanel"
 		"fieldName"		"MoveableSubPanel"
 		"xpos"			"0"
 		"ypos"			"0"
 		"zpos"			"-5"
-		"wide"			"0"
-		"tall"			"0"
-		"visible"		"0"
-		"enabled"		"1"
-		alpha				0
+		"wide"			"32"
+		"tall"			"36"
+		"visible"		"1"
+		"enabled"		"1"	
 		
 		"MoveableIconBG"
 		{
@@ -240,21 +276,4 @@
 			"brighttext"		"0"
 		}	
 	}
-	"AvatarImage"
-	{
-		"ControlName"	"CAvatarImagePanel"
-		"fieldName"		"AvatarImage"
-		"xpos"			"6"
-		"xpos_minmode"	"6"
-		"ypos"			"6"	[$WIN32]
-		"ypos"			"0"	[$X360]
-		"zpos"			"99"
-		"wide"			"11"
-		"tall"			"11"
-		"visible"		"1"
-		"enabled"		"1"
-		"image"			""
-		"scaleImage"	"1"	
-		"color_outline"	"52 48 45 255"
-	}	
 }

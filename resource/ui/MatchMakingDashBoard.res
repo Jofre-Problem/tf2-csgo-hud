@@ -8,13 +8,15 @@
 		xpos					0
 		ypos					0
 		zpos					9999
+
+
 		wide					f0
-		tall					42		// expanded_height instead
+		tall					90		// expanded_height instead
 		keyboardinputenabled		0
 
 		collapsed_height			0
-		expanded_height			42		// change height
-		resize_time				0.2
+		expanded_height			90		// change height
+		resize_time				0.01
 	}
 
 	"TopBar"
@@ -25,7 +27,7 @@
 		ypos					0
 		zpos					1
 		wide					f0
-		tall					42
+		tall					150
 		visible				1
 		proportionaltoparent		1
 
@@ -35,8 +37,8 @@
 		{
 			ControlName				EditablePanel
 			fieldName				"FindAGameButtonAnchor"
-			xpos					r0
-			ypos					0
+			xpos					43+p0.002
+			ypos					43
 			wide					0
 			tall					0
 		}
@@ -48,13 +50,13 @@
 			xpos					0				// hardcoded
 			ypos					0				// hardcoded
 			zpos					10
-			wide					42
-			tall					o1
+			wide					44
+			tall					42
 
-			font					"Symbols 34"
+			font					"Symbols 30"
 			textAlignment			center
-			labeltext				"Ð"
-			textInsetX				22				// adjust text postition
+			labeltext				"A"
+			textInsetX				21				// adjust text postition
 
 			Command				"find_game"
 			actionSignalLevel			2				// something with how clicks are handled; removing it breaks the button
@@ -74,20 +76,55 @@
 
 
 		// Party slots further in => resource\ui\DashBoardPartyMember.res
+	"Removeline"
+	{
+		ControlName				EditablePanel
+		FieldName				"Removeline"
+			xpos					rs1-5-p0.001
+			ypos					7-p0.001
+			zpos					100
+			wide					32
+			tall					31
+		bgcolor_override				"blank"
+		mouseInputEnabled			0
 
 		"PartySlot0"  // player
 		{
 			ControlName				CDashboardPartyMember
 			fieldName				"PartySlot0"
-			xpos					3
-			ypos					3
+			xpos					0
+			ypos					0
 			zpos					100
-			wide					36
+			wide					32
 			tall					o1
 
 			party_slot				0
+		}	
+	}
+		"PartySlot0"  // player
+		{
+			ControlName				CDashboardPartyMember
+			fieldName				"PartySlot0"
+			xpos					rs1-5-p0.001
+			ypos					7-p0.001
+			zpos					101
+			wide					32
+			tall					o1
+			"alpha"		"0"
+			party_slot				0
 		}
-
+		"bruh"
+		{
+			"ControlName"	"ImagePanel"
+			"fieldName" 	"bruh"
+			xpos					rs1-4-p0.001
+			ypos					2
+			"zpos"			"99"
+			"wide"			"35"
+			"tall"			"41"
+			"image"			"replay/thumbnails/som_2"
+			"scaleImage"	"1"
+		}
 		"PartySlot1"
 		{
 			ControlName				CDashboardPartyMember

@@ -1,155 +1,161 @@
 "Resource/UI/HudAmmoWeapons.res"
 {
-	"AmmoAnchor"
+	"HudWeaponAmmoBG"
 	{
-		ControlName				EditablePanel
-		fieldName				"AmmoAnchor"
-		xpos						c150
-		ypos						r150
-		wide						0
-		tall						40
-		visible					1
+		"ControlName"	"CTFImagePanel"
+		"fieldName"		"HudWeaponAmmoBG"
+		"xpos"			"9999"		
+	}
+	"HudWeaponLowAmmoImage"
+	{
+		"ControlName"	"ImagePanel"
+		"fieldName"		"HudWeaponLowAmmoImage"
+		"xpos"			"9999"		
 	}
 	
-	"AmmoInClip"			// loaded ammo
+	"BG"
 	{
-		ControlName				CExLabel
-		fieldName				"AmmoInClip"
-		xpos						0
-		ypos						0
-		zpos						5
-		wide						150
-		tall						40
-		visible					1
-
-		labelText				"%Ammo%"
-		font						"Bold 57"
-		fgcolor					"AmmoNormalFg"
-		textAlignment			east
-		paintbackground		0
+		"ControlName"	"ctfImagePanel"
+		"fieldName"		"BG"
+		"xpos"			"-1"
+		"ypos"			"r27"
+		"zpos"			"4"
+		"wide"			"100"
+		"tall"			"34"
+		"visible"		"1"
+		"alpha"			"185"
+		"image"					"replay/thumbnails/sidegradient2"
+		"enabled"		"1"
+		"scaleImage"	"1"	
+	}
+	"BG3"
+	{
+		"ControlName"	"ctfImagePanel"
+		"fieldName"		"BG3"
+		"xpos"			"-1"
+		"ypos"			"r27"
+		"zpos"			"4"
+		"wide"			"100"
+		"tall"			"34"
+		"visible"		"1"
+		"alpha"			"205"
+		"image"					"replay/thumbnails/sidegradient2"
+		"enabled"		"1"
+		"scaleImage"	"1"	
+	}
+	"BG2"
+	{
+		"ControlName"	"ctfImagePanel"
+		"fieldName"		"BG2"
+		"xpos"			"-1"
+		"ypos"			"r27"
+		"zpos"			"4"
+		"wide"			"100"
+		"tall"			"1"
+		"visible"		"1"
+		"alpha"			"205"
+		"image"					"replay/thumbnails/sidegradient2"
+		"enabled"		"1"
+		"scaleImage"	"1"	
+	}
+	"AmmoInClip"
+	{
+		"ControlName"	"CExLabel"
+		"fieldName"		"AmmoInClip"
+		"font"			"robotobold30"
+		"fgcolor"		"250 250 250 210"
+		"xpos"			"0"
+		"ypos"			"r28"	[$WIN32]
+		"zpos"			"5"
+		"wide"			"55"
+		"tall"			"31"
+		"visible"		"0"
+		"enabled"		"1"
+		"textAlignment"	"east"	
+		"labelText"		"%Ammo%"
 		
-		pin_to_sibling					"AmmoAnchor"
-		pin_corner_to_sibling		PIN_TOPRIGHT
-		pin_to_sibling_corner		PIN_TOPRIGHT
-	}
-	
-	"AmmoInClipShadow"	// loaded ammo shadow
+	}		
+	"AmmoInClipShadow"
 	{
-		ControlName				CExLabel
-		fieldName				"AmmoInClipShadow"
-		xpos						-1
-		ypos						-1
-		zpos						4
-		wide						150
-		tall						40
-		visible					1
+		"ControlName"	"CExLabel"
+		"fieldName"		"AmmoInClipShadow"
+		"font"			"robotobold30test"
+		"fgcolor"		"250 250 250 0"
+		"xpos"			"0"
+		"ypos"			"r28"	[$WIN32]
+		"zpos"			"4"
+		"wide"			"55"
+		"tall"			"31"
+		"visible"		"0"
+		"enabled"		"1"
+		"textAlignment"	"east"		
+		"labelText"		"%Ammo%"
 		
-		labelText				"%Ammo%"
-		font						"Bold 57"
-		textAlignment			east
-		fgcolor					"AmmoNormalBg"
-		paintbackground		0
-
-		pin_to_sibling			AmmoInClip
-	}
-	
-
-	"AmmoInReserve"		// remaining ammo
+	}						
+	"AmmoInReserve"
 	{
-		ControlName				CExLabel
-		fieldName				"AmmoInReserve"
-		xpos						3
-		ypos						0
-		zpos						5
-		wide						100
-		tall						40
-		visible					0
-
-		labelText				"%AmmoInReserve%"
-		font						"Bold 20"
-		textAlignment			north-west		
-		fgcolor					"AmmoNormalFg"
-		paintbackground		0
-		
-		pin_to_sibling					"AmmoAnchor"
-		pin_corner_to_sibling		PIN_TOPLEFT
-		pin_to_sibling_corner		PIN_TOPRIGHT
-	}
-	
-
-	"AmmoInReserveShadow"		// remaining ammo shadow
+		"ControlName"	"CExLabel"
+		"fieldName"		"AmmoInReserve"
+		"font"			"robotobold14"
+		"fgcolor"		"250 250 250 200"
+		"xpos"			"64"
+		"ypos"			"r28"
+		"zpos"			"7"
+		"wide"			"40"
+		"tall"			"38"
+		"visible"		"0"
+		"enabled"		"1"
+		"textAlignment"	"west"		
+		"labelText"		"%AmmoInReserve%"
+	}		
+	"AmmoInReserveShadow"
 	{
-		ControlName				CExLabel
-		fieldName				"AmmoInReserveShadow"
-		xpos						-1
-		ypos						-1
-		zpos						5
-		wide						100
-		tall						40
-		visible					0
-
-		labelText				"%AmmoInReserve%"
-		font						"Bold 20"
-		textAlignment			north-west
-		fgcolor					"AmmoNormalBg"
-		paintbackground		0
-		
-		pin_to_sibling			"AmmoInReserve"
-	}
-	
-
-	"AmmoNoClip"				// weapons that don't have reserve ammo (flamethrower, minigun, etc.)
+		"ControlName"	"CExLabel"
+		"fieldName"		"AmmoInReserveShadow"
+		"font"			"roboto22"
+		"fgcolor"		"250 250 250 210"
+		"xpos"			"55"
+		"ypos"			"r28"
+		"zpos"			"7"
+		"wide"			"10"
+		"tall"			"35"
+		"visible"		"0"
+		"enabled"		"1"
+		"textAlignment"	"center"		
+		"labelText"		"/"
+	}									
+	"AmmoNoClip"
 	{
-		ControlName				CExLabel
-		fieldName				"AmmoNoClip"
-		xpos						0
-		ypos						0
-		zpos						5
-		wide						250
-		tall						40
-		visible					1
-
-		labelText				"%Ammo%"
-		font						"Bold 57"
-		fgcolor					"AmmoNormalFg"
-		textAlignment			center
-		paintbackground		0
+		"ControlName"	"CExLabel"
+		"fieldName"		"AmmoNoClip"
+		"xpos"			"0"
+		"ypos"			"r28"	[$WIN32]
+		"zpos"			"5"
+		"wide"			"80"
+		"tall"			"31"
+		"visible"		"0"
+		"enabled"		"1"
+		"font"			"RobotoBold30"
+		"fgcolor"		"250 250 250 210"	
+		"textalignment"		"east"	
+		"labelText"		"%Ammo%"
 		
-		pin_to_sibling					"AmmoAnchor"
-		pin_corner_to_sibling		PIN_CENTER_TOP
-		pin_to_sibling_corner		PIN_CENTER_TOP
-	}
-	
+	}	
 	"AmmoNoClipShadow"
 	{
-		ControlName				CExLabel
-		fieldName				"AmmoNoClipShadow"
-		xpos						-1
-		ypos						-1
-		zpos						4
-		wide						250
-		tall						40
-		visible					0
-
-		labelText				"%Ammo%"
-		font						"Bold 57"
-		textAlignment			center
-		fgcolor					"AmmoNormalBg"
-		paintbackground		0
+		"ControlName"	"CExLabel"
+		"fieldName"		"AmmoNoClipShadow"
+		"xpos"			"0"
+		"ypos"			"r28"	[$WIN32]
+		"zpos"			"5"
+		"wide"			"80"
+		"tall"			"31"
+		"visible"		"0"
+		"enabled"		"1"
+		"font"			"RobotoBold30test"
+		"fgcolor"		"250 250 250 0"	
+		"textalignment"		"east"
+		"labelText"		"%Ammo%"
 		
-		pin_to_sibling			"AmmoNoClip"
-	}
-
-
-	"HudWeaponLowAmmoImage"			// removing this breaks ammo animations ???
-	{
-		ControlName		ImagePanel
-		fieldName		HudWeaponLowAmmoImage
-		xpos				0
-		ypos				0
-		zpos				0
-		wide				0
-		tall				0
-		visible			0
-	}
+	}									
 }
