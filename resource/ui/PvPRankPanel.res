@@ -1,331 +1,334 @@
-// Closing vgui_drawtree panel is enough to reload this file
-
 "Resource/UI/PvPRankPanel.res"
 {
-
-	//#region Medal 
-
 	"ModelContainer"
 	{
-		ControlName				EditablePanel
-		fieldName				"ModelContainer"
-		xpos					0
-		ypos					0
-		zpos					3		
-		wide					f0
-		tall					f0
-		proportionaltoparent		1
-		actionsignallevel			2
-
+		"ControlName"	"EditablePanel"
+		"fieldName"		"ModelContainer"
+		"xpos"			"cs-0.5"
+		"ypos"			"cs-0.5"
+		"zpos"			"3"		
+		"wide"			"f0"
+		"tall"			"f0"
+		"proportionaltoparent"	"1"
+		"actionsignallevel"	"2"
 
 		"BelowModelParticlePanel"
 		{
-			ControlName				CTFParticlePanel
-			fieldName				"BelowModelParticlePanel"
-			xpos					cs-0.5
-			ypos					cs-0.5
-			zpos					-1
-			wide					f0
-			tall					f0
-			proportionaltoparent		1
-			paintbackground			0
-
-			"if_mini"			// ?
-			{
-				xpos					cs-0.5-228
-			}
-
-
-			"ParticleEffects"
-			{
-				"0"
-				{
-					particle_xpos		c0
-					particle_ypos		c0
-					particle_scale		2		// spark size
-					particleName		"rankup_base"
-					start_activated		0
-					loop				0
-				}
-			}
-	
-		}
-
-		// If you try to position the model to the left of the screen, wierd things happen
-		// So I had to change it's size back to the menu side panel width
-		// To scale it you tweak fov and origin_x
-
-		"RankModel"				// image scales with panel
-		{
-			ControlName				CBaseModelPanel
-			fieldName				"RankModel"
-			xpos					cs-0.5
-			ypos					cs-0.5
-			zpos					0
-			wide					42
-			tall					42
-			proportionaltoparent		1
-
-			paintbackground			0
-			fov					33		// zoom in
-			render_texture			0
-
-			"if_mini"
-			{
-			}
-		
-			"model"
-			{
-				force_pos				1
-				modelname				""
-				skin					0
-				spotlight				1
-
-				angles_x				0
-				angles_y				180
-				angles_z				0
-				origin_x				80		// distance; lower values make the medal bounce more when clicked
-				origin_y				0		// horizontal
-				origin_z				0		// vertical
-
-				"if_mini"		// ?
-				{
-				}
-
-				"animation"
-				{
-					sequence				"idle"
-					default				1
-				}
-			}
-		
-			"lights"			// this is interesting
-			{
-				"default"
-				{
-					name					"directional"
-					color					"0.5 0.5 0.5"
-					direction				"0.60 0.65 0.2"
-				}
-			}
-		}
-
-
-		"AboveModelParticlePanel"
-		{
-			ControlName				CTFParticlePanel
-			fieldName				"AboveModelParticlePanel"
-			xpos					cs-0.5
-			ypos					cs-0.5
-			zpos					1
-			wide					f0
-			tall					f0
-			proportionaltoparent		1
-
-			paintbackground			0
-
-			"if_mini"
-			{
-				xpos					cs-0.5-228
-			}
-
-			"ParticleEffects"
-			{
-				"0"
-				{
-					particle_xpos			c0
-					particle_ypos			c0
-					particle_scale			3
-					particleName			"rankup_glitter"
-					start_activated			0
-					loop					0
-				}
-				"1"
-				{
-					particle_xpos			c0
-					particle_ypos			c0
-					particle_scale			2
-					particleName			"badgepress_base"
-					start_activated 			0
-					loop					0
-				}
-				"2"
-				{
-					particle_xpos			c-8
-					particle_ypos			c0
-					particle_scale			2
-					particleName			"rankdown_base"
-					start_activated 			0
-					loop					0
-				}
-			}
-		}
-
-
-		"MedalButton"			// hitbox round
-		{
-			ControlName				Button
-			fieldName				"MedalButton"
-			xpos					cs-0.5
-			ypos					cs-0.5
-			zpos					100
-			wide					p0.6
-			tall					p0.6
-			proportionaltoparent		1
-
-			command				"medal_clicked"
-			actionsignallevel			2
-			labeltext				""
-
-			paintbackground			0
-			backgroundenabled			0		// check out!
-		}
-	}
-
-	//#endregion
-
-	"BGPanel"
-	{
-		ControlName				EditablePanel
-		fieldName				"BGPanel"
-		xpos					0
-		ypos					0
-		zpos					0
-		wide					f0
-		tall					f0
-		proportionaltoparent		1
-
-		//#region Name, Mode and Rank 
-
-		"NameLabel"		// player's name
-		{
-			ControlName				Label
-			fieldName				"NameLabel"
-			xpos					54
-			ypos					rs1
-			wide					0 //278
-			zpos					100
-			tall					35
-
-			font					"Regular 42"
-			labelText				"%name%"
-			textAlignment			west
-			AllCaps				1
-
-			fgcolor_override			"MenuPanelFg"
-			paintbackground			0
-
-			"if_mini"
-			{
-			}
-		}
-
-
-		"DescLine1"  // casual/competitive
-		{
-			ControlName				CAutoFittingLabel
-			fieldName				"DescLine1"
-			xpos					r35
-			ypos					30
-			zpos					100
-			wide					0 //35
-			tall					20
-
-			font					"Thin 11"
-			labelText				"%desc1%"
-			textAlignment			center
-			AllCaps				1
-
-			fgcolor_override			"MenuPanelFg"
-			paintbackground			0
-
-			"if_mini"
-			{
-			}
-
-			"fonts"		// multiple?
-			{
-				"0"				"Thin 11"
-				"1"				"Thin 11"
-				"2"				"Thin 11"
-			}
-		}
-
-		"DescLine2"  // rank/level
-		{
-			ControlName			CAutoFittingLabel
-			fieldName			"DescLine2"
-			xpos					50
-			ypos					39
-			zpos					100
-			wide					0 //210
-			tall					25
-
-			font					"Regular 24"
-			labelText				"%desc2%"
-			textAlignment			west
-			AllCaps				1
-
-			fgcolor_override			"MenuPanelFg"
-			paintbackground			0
-
-			"if_mini"
-			{
-			}
-
-			"fonts"
-			{
-				"0"				"Regular 24"
-				"1"				"Regular 24"
-				"2"				"Regular 24"
-			}
-
-			"colors"		// ?
-			{
-				"1"					"White"
-				"2"					"White"
-			}
-		}
-
-		//#endregion
-
-		//#region Stats 
-		
-		"StatsContainer"
-		{
-			"ControlName"			"EditablePanel"
-			"fieldName"				"StatsContainer"
-			"xpos"					"0"
-			"ypos"					"105"
-			"wide"					"280"
-			"tall"					"0"
+			"ControlName"	"CTFParticlePanel"
+			"fieldName"		"BelowModelParticlePanel"
+			"xpos"			"0"
+			"ypos"			"0"
+			"zpos"			"-1"
+			"wide"			"f0"
+			"tall"			"f0"
+			"visible"		"1"
 			"proportionaltoparent"	"1"
 
 			if_mini
 			{
-				"xpos"				"rs1-10"
-				"ypos"				"0"
-				"wide"				"p0.85"
-				"tall"				"f0"
+				"xpos"		"cs-0.5-228"
+			}
+
+			"ParticleEffects"
+			{
+				"0"
+				{
+					"particle_xpos" "c0"
+					"particle_ypos" "c0"
+					"particle_scale" "3"
+					"particleName"	"rankup_base"
+					"start_activated" "0"
+					"loop"	"0"
+				}
+			}
+
+			"paintbackground"	"0"	
+		}
+
+		"RankModel"
+		{
+			"ControlName"	"CBaseModelPanel"
+			"fieldName"		"RankModel"
+			"xpos"			"cs-0.5"
+			"ypos"			"cs-0.5"
+			"zpos"			"0"		
+			"wide"			"o1"
+			"tall"			"p0.12"
+			"autoResize"	"0"
+			"pinCorner"		"0"
+			"visible"		"1"
+			"enabled"		"1"
+			"fov"			"70"
+			"proportionaltoparent"	"1"
+
+			if_mini
+			{
+				"xpos"		"cs-0.5-228"
+				"ypos"		"cs-0.5"
+				"wide"		"200"
+				"tall"		"200"
+			}
+
+			"paintbackground"	"0"
+
+			"render_texture"	"0"
+		
+			"model"
+			{
+				"force_pos"		"1"
+				"modelname"	""
+				"skin"		"0"
+				"angles_x"	"0"
+				"angles_y"	"180"
+				"angles_z"	"0"
+				"origin_x"		"45"
+				"origin_y"		"0"
+				"origin_z"		"0"
+				"spotlight"	"1"
+
+				if_mini
+				{
+					"origin_x"		"55"
+				}
+
+				"animation"
+				{
+					"sequence"	"idle"
+					"default"	"1"
+				}
+			}
+		
+			"lights"
+			{
+				"default"
+				{
+					"name"			"directional"
+					"color"			"0.5 0.5 0.5"
+					"direction"		"0.60 0.65 0.2"
+				}
+			}
+		}
+
+		"AboveModelParticlePanel"
+		{
+			"ControlName"	"CTFParticlePanel"
+			"fieldName"		"AboveModelParticlePanel"
+			"xpos"			"0"
+			"ypos"			"0"
+			"zpos"			"1"
+			"wide"			"f0"
+			"tall"			"f0"
+			"visible"		"1"
+			"proportionaltoparent"	"1"
+
+			"paintbackground"	"0"
+
+			if_mini
+			{
+				"xpos"		"cs-0.5-228"
+			}
+
+			"ParticleEffects"
+			{
+				"0"
+				{
+					"particle_xpos" "c0"
+					"particle_ypos" "c0"
+					"particle_scale"	"5"
+					"particleName"	"rankup_glitter"
+					"start_activated" "0"
+					"loop"	"0"
+				}
+				"1"
+				{
+					"particle_xpos"	"c0"
+					"particle_ypos"	"c0"
+					"particle_scale" "4"
+					"particleName"	"badgepress_base"
+					"start_activated" "0"
+					"loop"	"0"
+				}
+				"2"
+				{
+					"particle_xpos" "c-8"
+					"particle_ypos" "c0"
+					"particle_scale" "4"
+					"particleName"	"rankdown_base"
+					"start_activated" "0"
+					"loop"	"0"
+				}
+			}
+
+			"paintbackground"	"1"
+		}
+
+		"MedalButton"
+		{
+			"ControlName"	"Button"
+			"fieldName"		"MedalButton"
+			"xpos"			"cs-0.5"
+			"ypos"			"cs-0.5+2"
+			"zpos"			"100"
+			"wide"			"o1"
+			"tall"			"42"
+			"proportionaltoparent"	"1"
+			"command"	"medal_clicked"
+			"actionsignallevel"	"2"
+			"labeltext"	""
+
+			"paintbackground"	"0"
+			"backgroundenabled"	"0"
+		}
+	}
+
+	"BGPanel"
+	{
+		"ControlName"	"EditablePanel"
+		"fieldName"		"BGPanel"
+		"xpos"			"rs1"
+		"ypos"			"20"
+		"zpos"			"-1"
+		"wide"			"260"
+		"tall"			"f40"
+		"visible"		"1"
+		"PaintBackgroundType"	"2"
+		"proportionaltoparent"	"1"
+
+		if_mini
+		{
+			"xpos"			"cs-0.5"
+			"ypos"			"cs-0.5"
+			"tall"			"35"
+			"wide"			"505"
+		}
+
+		"NameLabel"
+		{
+			"ControlName"	"Label"
+			"fieldName"		"NameLabel"
+			"xpos"			"65"
+			"ypos"			"5"
+			"wide"			"0"		//f0
+			"zpos"			"100"
+			"tall"			"20"
+			"visible"		"1"
+			"enabled"		"1"
+			"font"			"HudFontSmallishBold"
+			"fgcolor_override"	"TanLight"
+			"textAlignment"	"north-west"
+			"labelText"		"%name%"
+			"proportionaltoparent"	"1"
+
+			if_mini
+			{
+				"visible"	"0"
+			}
+		}
+	
+		"DescLine1"			//disabled from mainmenuoverride
+		{
+			"ControlName"	"CAutoFittingLabel"
+			"fieldName"		"DescLine1"
+			"xpos"			"65"
+			"ypos"			"20"
+			"wide"			"105"
+			"zpos"			"100"
+			"tall"			"20"
+			"visible"		"1"
+			"enabled"		"1"
+			"font"			"robotobold14"
+			"fgcolor_override"	"TanLight"
+			"textAlignment"	"center"
+			"labelText"		"%desc1%"
+			"proportionaltoparent"	"1"
+
+			if_mini
+			{
+				"xpos"	"67"
+				"ypos"	"4"
+				"wide"	"195"
+				"font"	"HudFontSmallestBold"
+				"fgcolor_override"	"TanLight"
+				"textAlignment"	"north-west"
+			}
+
+			"fonts"
+			{
+				"0"		"robotobold14"
+				"1"		"robotobold14"
+				"2"		"robotobold14"
+			}
+		}
+
+		"DescLine2"
+		{
+			"ControlName"	"CAutoFittingLabel"
+			"fieldName"		"DescLine2"
+			"xpos"			"65"
+			"ypos"			"20"
+			"wide"			"105"
+			"zpos"			"100"
+			"tall"			"20"
+			"visible"		"1"
+			"enabled"		"1"
+			"font"			"robotobold14"
+			"fgcolor_override"	"TanLight"
+			"textAlignment"	"center"
+			"labelText"		"%desc2%"
+			"proportionaltoparent"	"1"
+
+			if_mini
+			{
+				"xpos"	"67"
+				"ypos"	"4"
+				"wide"	"195"
+				"font"	"HudFontSmallestBold"
+				"fgcolor_override"	"TanLight"
+				"textAlignment"	"north-west"
+			}
+
+			"fonts"
+			{
+				"0"		"robotobold14"
+				"1"		"robotobold14"
+				"2"		"robotobold14"
+			}
+
+			"colors"
+			{
+				"1"		"CreditsGreen"
+				"2"		"TanLight"
+			}
+		}
+
+		"StatsContainer"
+		{
+			"ControlName"	"EditablePanel"
+			"fieldName"		"StatsContainer"
+			"xpos"			"64"
+			"ypos"			"0"
+			"wide"			"105"
+			"tall"			"f0"
+			"proportionaltoparent"	"1"
+
+			if_mini
+			{
+				"xpos"			"rs1-10"
+				"ypos"			"0"
+				"wide"			"p0.85"
 			}
 
 			"XPBar"
 			{
 				"Controlname"	"EditablePanel"
 				"fieldName"		"XPBar"
-				"xpos"			"0"
-				"ypos"			"0"
-				"wide"			"f0"
-				"tall"			"f0"
+				"xpos"			"cs-0.5"
+				"ypos"			"rs1-3"
+				"wide"			"p1"
+				"tall"			"30"
 				"proportionaltoparent"	"1"
-				
-				if_mini
-				{
-					"xpos"		"cs-0.5"
-					"ypos"		"rs1-3"
-					"wide"		"p1"
-					"tall"		"30"
-				}
+
+	
 
 				"CurrentXPLabel"
 				{
@@ -346,7 +349,7 @@
 					
 					if_mini
 					{
-						"tall"			"20"
+						"tall" "20"
 					}
 				}
 
@@ -369,7 +372,7 @@
 					
 					if_mini
 					{
-						"tall"			"20"
+						"tall" "20"
 					}
 				}
 
@@ -378,15 +381,10 @@
 					"Controlname"	"EditablePanel"
 					"fieldName"		"ProgressBarsContainer"
 					"xpos"			"0"
-					"ypos"			"0"
+					"ypos"			"rs1-10"
 					"wide"			"p1"
 					"tall"			"7"
 					"proportionaltoparent"	"1"
-					
-					if_mini
-					{
-						"ypos"		"rs1-10"
-					}
 
 					"ProgressBar"
 					{
@@ -405,7 +403,7 @@
 						
 						if_mini
 						{
-							"wide"	"f0"
+							"wide" "f0"
 						}
 					}
 
@@ -420,7 +418,7 @@
 						"proportionaltoparent"	"1"
 						"progress"		"0"
 
-						"fgcolor_override"	"BlueLight"
+						"fgcolor_override"	"CreditsGreen"
 					}
 
 					"Frame"
@@ -437,7 +435,7 @@
 						
 						if_mini
 						{
-							"wide"	"f0"
+							"wide" "f0"
 						}
 					}
 				}
@@ -605,7 +603,5 @@
 				}
 			}
 		}
-
-		//#endregion
 	}
 }

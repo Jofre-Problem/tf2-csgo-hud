@@ -32,7 +32,6 @@
 	
 	"random"
 	{
-		"paintbackground"	"0"
 		"ControlName"		"CExButton"
 		"fieldName"			"random"
 		"xpos"			"C-50"
@@ -742,7 +741,6 @@
 
 	"CancelButton" [$WIN32] 
 	{
-		"paintbackground"	"0"
 		"ControlName"	"CExButton"
 		"fieldName"		"CancelButton"
 		"xpos"			"c-280"
@@ -787,7 +785,6 @@
 		"FgColor_override" "255 255 255 110"
 		"armedFgColor_override" "255 255 255 220"
 		"armedbgColor_override" "blank"
-		"paintbackground"	"0"
 	}
 
 	"ResetButton" [$WIN32] 
@@ -806,7 +803,7 @@
 		"tabPosition"	"0"
 		"labelText"		"#TF_ClassMenu_Reset"
 		"textAlignment"	"center"
-		"Command"		"resetclass"	"paintbackground"	"0"
+		"Command"		"resetclass"
 		"font"			"HudFontSmallBold"
 	}
 

@@ -2,14 +2,14 @@
 {	
 	// player health data
 	"HudPlayerHealth"
-	{
+	{ 
 		"ControlName"	"EditablePanel"
 		"fieldName"		"HudPlayerHealth"
 		"xpos"			"0"		[$WIN32]
 		"ypos"			"0"	[$WIN32]
 		"zpos"			"2"
-		"wide"			"200"//98"
-		"tall"			"480"
+		"wide"			"200"
+		"tall"			"f0"
 		"visible"		"1"
 		"enabled"		"1"	
 		"HealthBonusPosAdj"	"0"
@@ -18,31 +18,18 @@
 	}	
 	"HPProgressBar1"
 	{
-		"ControlName"		"ProgressBar"
+		"ControlName"		"ContinuousProgressBar"
 		"fieldName"			"HPProgressBar1"
 		"xpos"				"73"
-		"ypos"				"rs1-8"
+		"ypos"				"rs1-10"
 		"zpos"		"100"
 		"wide"				"40"
-		"tall"				"10"
+		"tall"				"6"
 		"variable"		"health"
 		"fgcolor_override"	"tanlight"
 		"bgcolor_override"	"blank"
 		//even so, max value of 100
 	}	
-	"HPProgressBar2"
-	{
-		"ControlName"		"ProgressBar"
-		"fieldName"			"HPProgressBar2"
-		"xpos"				"2"
-		"zpos"		"100"
-		"wide"				"40"
-		"tall"				"10"
-		"variable"		"health"
-		"fgcolor_override"	"tanlight"
-		"bgcolor_override"	"blank"	"pin_to_sibling"	"HPProgressBar1"
-		//even so, max value of 100	
-	}		
 	"HPProgressBarBG"
 	{
 		"ControlName"		"ImagePanel"
@@ -79,7 +66,7 @@
 		"xpos"			"-1"
 		"ypos"			"r27"
 		"zpos"			"4"
-		"wide"			"120"
+		"wide"			"100"
 		"tall"			"34"
 		"visible"		"1"
 		"alpha"			"205"
@@ -94,7 +81,7 @@
 		"xpos"			"-1"
 		"ypos"			"r27"
 		"zpos"			"4"
-		"wide"			"120"
+		"wide"			"100"
 		"tall"			"1"
 		"visible"		"1"
 		"alpha"			"205"
@@ -166,8 +153,8 @@
 		"ControlName"	"CExLabel"
 		"fieldName"		"PlayerStatusHealthValue"
 		"xpos"			"30"
-		"ypos"			"r28"
-		"zpos"			"500"
+		"ypos"			"r28"	[$WIN32]
+		"zpos"			"5"
 		"wide"			"100"
 		"tall"			"31"
 		"visible"		"1"
@@ -183,7 +170,7 @@
 		"fieldName"		"PlayerStatusHealthValueScan"
 		"xpos"			"30"
 		"ypos"			"r28"	[$WIN32]
-		"zpos"			"400"
+		"zpos"			"4"
 		"wide"			"100"
 		"tall"			"31"
 		"visible"		"1"
